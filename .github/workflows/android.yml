@@ -23,7 +23,7 @@
           name: index.html
           path: app/build/reports/lint-results-debug.html
 
-      - name: Grant execute permissions for gradlew
+      - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
         run: ./gradlew build
