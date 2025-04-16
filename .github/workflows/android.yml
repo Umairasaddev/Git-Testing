@@ -29,27 +29,27 @@
        - name: Build with gradle
          run: ./gradlew build
 
- unit-test:
-   needs: [lint]
-   runs-on: ubuntu-latest
-   steps:
-     - name: Checkout the code
-       uses: actions/checkout@v2
+   unit-test:
+    needs: [lint]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v2
 
-     - name: Run Tests
-       run: ./gradlew test
+      - name: Run Tests
+        run: ./gradlew test
 
-     - name: Upload Test Report
-       uses: actions/upload-artifact@v2
-       with:
-         name: unit_test_report
-         path: app/build/reports/tests/testDebugUnitTest/
+      - name: Upload Test Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: unit_test_report
+          path: app/build/reports/tests/testDebugUnitTest/
 
-     - name: Grant execute permission for gradlew
-       run: chmod +x gradlew
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
 
-     - name: Build with gradle
-       run: ./gradlew build
+      - name: Build with gradle
+        run: ./gradlew build
 
 
 #
