@@ -8,7 +8,7 @@
    workflow_dispatch:
 
 
- unit_test:
+ unit-test:
    needs: [lint]
    runs-on: ubuntu-latest
    steps:
@@ -24,3 +24,8 @@
          name: unit_test_report
          path: app/build/reports/tests/testDebugUnitTest/
 
+     - name: Grant execute permission for gradlew
+       run: chmod +x gradlew
+
+     - name: Build with gradle
+       run: ./gradlew build
